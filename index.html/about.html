@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>About</title>
+    <style>
+        nav {
+      background-color: #006666;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background-color: #d6f4f4;
+      width: 1000px;
+      padding: 30px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      justify-content: space-between;
+      z-index: 999;
+      animation: dropdownAnim 0.2s ease-in-out;
+      flex-wrap: wrap;
+    }
+
+    .dropdown-column {
+      flex: 1;
+      padding: 0 15px;
+      min-width: 200px;
+    }
+
+    .dropdown-column h4 {
+      color: red;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .dropdown-column a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .dropdown-column a:hover {
+      color: #0077cc;
+    }
+
+    @keyframes dropdownAnim {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .dropdown-content {
+        flex-direction: column;
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 20px 10px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .dropdown {
+        width: 100%;
+      }
+    }
+
+    .hero {
+  background: url('images/background Image.jpeg') no-repeat center center/cover;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.pet-image {
+  width: 180px;
+  position: absolute;
+  top: 50px;
+}
+
+.pet-image.left {
+  left: 30px;
+}
+
+.pet-image.right {
+  right: 30px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about {
+  background: #fff;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 30px;
+}
+
+.about p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+@media (max-width: 991px) {
+  .pet-image {
+    width: 100px;
+    top: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Devices (Mobiles) */
+@media (max-width: 600px) {
+  .pet-image {
+    display: none;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .about {
+    padding: 40px 15px;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+/* Vision Section */
+.vision-section {
+  background-color: #cce5eb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.vision-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.heart-icon {
+  font-size: 2.5rem;
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+.vision-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.vision-text {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #222;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .vision-title {
+    font-size: 1.6rem;
+  }
+
+  .vision-text {
+    font-size: 1.1rem;
+  }
+
+  .heart-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vision-title {
+    font-size: 1.4rem;
+  }
+
+  .vision-text {
+    font-size: 1rem;
+  }
+
+  .heart-icon {
+    font-size: 1.8rem;
+  }
+}
+ h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 40px;
+ }
+
+/* Audience Section */
+.audience-section {
+  background-color: #d6ccdb;
+  padding: 80px 20px;
+}
+
+.audience-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.audience-card {
+  text-align: center;
+}
+
+.audience-card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.audience-card h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  color: black;
+}
+
+.audience-card p {
+  font-size: 23px;
+  line-height: 1.6;
+  color: black;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .audience-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .audience-container {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-card img {
+    max-width: 100%;
+  }
+}
+
+.footer {
+  background-color: #15787c;
+  color: #fff;
+  padding: 50px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-column h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.subscribe {
+  display: flex;
+  margin: 10px 0;
+}
+
+.subscribe input {
+  padding: 10px;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  flex: 1;
+  font-size: 15px;
+}
+
+.subscribe button {
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.small-note {
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 10px;
+  color: #e0e0e0;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.shipping-box {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+
+  padding: 15px 20px;
+  border-radius: 12px;
+  gap: 15px;
+  min-width: 260px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.shipping-box i {
+  font-size: 24px;
+  color: #15787c;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe {
+    flex-direction: column;
+  }
+
+  .subscribe input,
+  .subscribe button {
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .subscribe button {
+    margin-top: 10px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+     <nav>
+    <a href="home.html">Home</a>
+
+    <!-- Dogs Dropdown -->
+    <div class="dropdown">
+      <a id="dogBtn">Dogs ▼</a>
+      <div class="dropdown-content" id="dogMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Dry Food</a>
+          <a href="#">Wet Food</a>
+          <a href="#">Prescribed Food</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Treats</h4>
+          <a href="#">Biscuit</a>
+          <a href="#">Dental Treats</a>
+          <a href="#">Calcium chew</a>
+          <a href="#">Chicken Treat</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Clothing</h4>
+          <a href="#">Coat</a>
+          <a href="#">Jacket</a>
+          <a href="#">T shirt</a>
+          <a href="#">Shirt</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Groom</h4>
+          <a href="#">Shampoos</a>
+          <a href="#">Wipes</a>
+          <a href="#">Grooming Tool</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cats Dropdown -->
+    <div class="dropdown">
+      <a id="catBtn">Cats ▼</a>
+      <div class="dropdown-content" id="catMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Dry Food</a>
+          <a href="#">Wet Food</a>
+          <a href="#">Prescribed Food</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Treats</h4>
+          <a href="#">Biscuit</a>
+          <a href="#">Dental Treats</a>
+          <a href="#">Calcium chew</a>
+          <a href="#">Chicken Treat</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Toys</h4>
+          <a href="#">Cat nip</a>
+          <a href="#">Interactive Toys</a>
+          <a href="#">Teaser and Wands</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Groom</h4>
+          <a href="#">Shampoos</a>
+          <a href="#">Wipes</a>
+          <a href="#">Grooming Tool</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small Pets Dropdown -->
+    <div class="dropdown">
+      <a id="smallPetBtn">Small Pets ▼</a>
+      <div class="dropdown-content" id="smallPetMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Pellets And Hay</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Small Pet Health</h4>
+          <a href="#">Supplements</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Birds Dropdown -->
+    <div class="dropdown">
+      <a id="birdBtn">Birds ▼</a>
+      <div class="dropdown-content" id="birdMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Seed Mix</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Bird Health</h4>
+          <a href="#">Supplements</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grooming Dropdown -->
+    <div class="dropdown">
+      <a id="groomingBtn">Grooming ▼</a>
+      <div class="dropdown-content" id="groomingMenu">
+        <div class="dropdown-column">
+          <h4>Grooming</h4>
+          <a href="#">Shampoo And Conditioner</a>
+          <a href="#">Skin And Coat Care</a>
+          <a href="#">Wipes</a>
+          <a href="#">Grooming Tools</a>
+          <a href="#">Perfume</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vets (Extra Dropdown with icons) -->
+    <div class="dropdown">
+      <a id="vetsBtn">Vets ▼</a>
+      <div class="dropdown-content" id="vetsMenu">
+        <div class="dropdown-column">
+          <h4>Veterinary Services</h4>
+          <a href="#">👩‍⚕️ Vet Consultation</a>
+          <a href="#">🏥 Vet Service</a>
+          <a href="#">💉 E Pharmacy</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#">Contact Us</a>
+  </nav>
+
+  <section class="hero">
+    <img src="images/2.gif" alt="Dog" class="pet-image left">
+    
+    <div class="hero-text">
+      <h1>Making Pet Parenting Pretty Amazing</h1>
+      <p>You know what’s our favorite jam?<br>
+      Your pet’s happiness. And ultimately yours.</p>
+    </div>
+
+    <img src="images/catgif.gif" alt="Cat" class="pet-image right">
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Buffy Pets</h2>
+    <p>
+      From grooming and pampering to helping you buy the best products for your pets,
+      consider Buffy as your one-stop destination for all-things-pets.
+      We understand what a pet parent truly wants to have their pets lead a life
+      brimming with health and happiness and are passionate about making that possible.
+    </p>
+  </section>
+
+  <section class="vision-section">
+  <div class="vision-container">
+    <div class="heart-icon">❤️</div>
+    <h2 class="vision-title">The Vision that Keeps Us Going</h2>
+    <p class="vision-text">
+      To build India’s largest pet care ecosystem<br>
+      by providing pet families with compassionate, reliable and competent pet care.
+    </p>
+  </div>
+</section>
+
+<h1>What are We Aiming to Accomplish?</h1>
+
+<section class="audience-section">
+  <div class="audience-container">
+
+    <!-- Card 1 -->
+    <div class="audience-card">
+      <img src="images/about1.jpg" alt="Expert Partner">
+      <h3>For Expert<br>Partner</h3>
+      <p>
+        To recognise and value our expert partners for their contribution in building and strengthening the pet care ecosystem
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="audience-card">
+      <img src="images/health2.jpg" alt="Independent Caregivers">
+      <h3>For Independent<br>Caregivers</h3>
+      <p>
+        To provide steady and equitable income opportunities to pet lovers who choose to transform their passion into profession
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="audience-card">
+      <img src="images/about3.jpg" alt="Pet Families">
+      <h3>For Pet<br>Families</h3>
+      <p>
+        To provide easy access to reliable, standardised and quality pet care that enhances the joy of pet parenting.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Contact Us</li>
+        <li>FAQs</li>
+        <li>Privacy Policy</li>
+        <li>Track your order</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Service</h4>
+      <ul>
+        <li>Pet Grooming</li>
+        <li>Vet Consultation</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li>Happy Pets</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Get in Touch for Offers</h4>
+      <div class="subscribe">
+        <input type="email" placeholder="Enter your mail id" >
+        <button>Submit</button>
+      </div>
+      <p><strong>Reach us:</strong> support@buffy.com</p>
+      <p class="small-note">Join our Zigly community and be the first to know about exciting updates, services, and expert advice on caring for your furry friends.</p>
+
+      <h4>Connect With Us</h4>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="shipping-box">
+      <i class="fas fa-truck"></i>
+      <div>
+        <strong>Free Shipping</strong>
+        <p>on order all above ₹700</p>
+      </div>
+    </div>
+    <div class="shipping-box">
+      <i class="fas fa-undo-alt"></i>
+      <div>
+        <strong>Easy Return Policy</strong>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+    //dropdown 
+
+  const menus = ["dog", "cat", "smallPet", "bird", "grooming", "vets"];
+    menus.forEach(name => {
+      const btn = document.getElementById(name + "Btn");
+      const menu = document.getElementById(name + "Menu");
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        menus.forEach(other => {
+          const otherMenu = document.getElementById(other + "Menu");
+          if (other !== name) otherMenu.style.display = "none";
+        });
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        e.stopPropagation();
+      });
+    });
+
+    window.addEventListener("click", function (e) {
+      menus.forEach(name => {
+        const btn = document.getElementById(name + "Btn");
+        const menu = document.getElementById(name + "Menu");
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.style.display = "none";
+        }
+      });
+    });
+</script>
+</body>
+</html>

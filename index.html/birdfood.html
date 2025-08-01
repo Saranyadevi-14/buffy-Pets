@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Food</title>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+       nav {
+      background-color: #006666;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background-color: #d6f4f4;
+      width: 1000px;
+      padding: 30px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      justify-content: space-between;
+      z-index: 999;
+      animation: dropdownAnim 0.2s ease-in-out;
+      flex-wrap: wrap;
+    }
+
+    .dropdown-column {
+      flex: 1;
+      padding: 0 15px;
+      min-width: 200px;
+    }
+
+    .dropdown-column h4 {
+      color: red;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .dropdown-column a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .dropdown-column a:hover {
+      color: #0077cc;
+    }
+
+    @keyframes dropdownAnim {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .dropdown-content {
+        flex-direction: column;
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 20px 10px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .dropdown {
+        width: 100%;
+      }
+    }
+
+      
+        .products-section {
+  background-color: #d7f0f2;
+  padding: 40px 20px;
+  text-align: center;
+}
+.section-title {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+/* Make TABS show in a ROW not COLUMN */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.tab {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px 20px;
+  background: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.tabs {
+    text-decoration: none;
+}
+
+.tab img {
+  width: 60px;
+  height: 50px;
+}
+@media (max-width: 600px) {
+  .tab {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      gap: 40px;
+      padding: 40px;
+    
+    }
+
+    .product-card {
+      background-color: #fff6f6;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .Products-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #000;
+    }
+
+    .rating {
+      color: #f9bd01;
+      font-size: 16px;
+      margin: 10px 0 0;
+    }
+
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 5px 0;
+    }
+
+    .price {
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 5px 0 10px;
+    }
+
+    .cart-button {
+      background-color: #ff3c3c;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s ease;
+    }
+
+    .cart-button:hover {
+      background-color: #e03232;
+    }
+/* Large screens (Laptop/Desktop) - default: 3 columns */
+@media (min-width: 1025px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium screens (Tablet) - 2 columns */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (Mobile) - 1 column */
+@media (max-width: 767px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .Products-image {
+    height: 220px; /* smaller image on phones */
+  }
+
+  .cart-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .product-name, .price {
+    font-size: 16px;
+  }
+}
+.footer {
+  background-color: #15787c;
+  color: #fff;
+  padding: 50px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-column h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.subscribe {
+  display: flex;
+  margin: 10px 0;
+}
+
+.subscribe input {
+  padding: 10px;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  flex: 1;
+  font-size: 15px;
+}
+
+.subscribe button {
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.small-note {
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 10px;
+  color: #e0e0e0;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.shipping-box {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+
+  padding: 15px 20px;
+  border-radius: 12px;
+  gap: 15px;
+  min-width: 260px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.shipping-box i {
+  font-size: 24px;
+  color: #15787c;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe {
+    flex-direction: column;
+  }
+
+  .subscribe input,
+  .subscribe button {
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .subscribe button {
+    margin-top: 10px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <nav>
+    <a href="home.html">Home</a>
+    <!-- Dogs Dropdown -->
+    <div class="dropdown">
+      <a id="dogBtn">Dogs ▼</a>
+      <div class="dropdown-content" id="dogMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Dry Food</a>
+          <a href="#">Wet Food</a>
+          <a href="#">Prescribed Food</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Treats</h4>
+          <a href="#">Biscuit</a>
+          <a href="#">Dental Treats</a>
+          <a href="#">Calcium chew</a>
+          <a href="#">Chicken Treat</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Clothing</h4>
+          <a href="#">Coat</a>
+          <a href="#">Jacket</a>
+          <a href="#">T shirt</a>
+          <a href="#">Shirt</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Groom</h4>
+          <a href="#">Shampoos</a>
+          <a href="#">Wipes</a>
+          <a href="#">Grooming Tool</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cats Dropdown -->
+    <div class="dropdown">
+      <a id="catBtn">Cats ▼</a>
+      <div class="dropdown-content" id="catMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Dry Food</a>
+          <a href="#">Wet Food</a>
+          <a href="#">Prescribed Food</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Treats</h4>
+          <a href="#">Biscuit</a>
+          <a href="#">Dental Treats</a>
+          <a href="#">Calcium chew</a>
+          <a href="#">Chicken Treat</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Toys</h4>
+          <a href="#">Cat nip</a>
+          <a href="#">Interactive Toys</a>
+          <a href="#">Teaser and Wands</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Groom</h4>
+          <a href="#">Shampoos</a>
+          <a href="#">Wipes</a>
+          <a href="#">Grooming Tool</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small Pets Dropdown -->
+    <div class="dropdown">
+      <a id="smallPetBtn">Small Pets ▼</a>
+      <div class="dropdown-content" id="smallPetMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Pellets And Hay</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Small Pet Health</h4>
+          <a href="#">Supplements</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Birds Dropdown -->
+    <div class="dropdown">
+      <a id="birdBtn">Birds ▼</a>
+      <div class="dropdown-content" id="birdMenu">
+        <div class="dropdown-column">
+          <h4>Food</h4>
+          <a href="#">Seed Mix</a>
+        </div>
+        <div class="dropdown-column">
+          <h4>Bird Health</h4>
+          <a href="#">Supplements</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grooming Dropdown -->
+    <div class="dropdown">
+      <a id="groomingBtn">Grooming ▼</a>
+      <div class="dropdown-content" id="groomingMenu">
+        <div class="dropdown-column">
+          <h4>Grooming</h4>
+          <a href="#">Shampoo And Conditioner</a>
+          <a href="#">Skin And Coat Care</a>
+          <a href="#">Wipes</a>
+          <a href="#">Grooming Tools</a>
+          <a href="#">Perfume</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vets (Extra Dropdown with icons) -->
+    <div class="dropdown">
+      <a id="vetsBtn">Vets ▼</a>
+      <div class="dropdown-content" id="vetsMenu">
+        <div class="dropdown-column">
+          <h4>Veterinary Services</h4>
+          <a href="#">👩‍⚕️ Vet Consultation</a>
+          <a href="#">🏥 Vet Service</a>
+          <a href="#">💉 E Pharmacy</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#">Contact Us</a>
+  </nav>
+    <section class="products-section">
+  
+
+  <!-- FILTER TABS IN A ROW -->
+  <div class="filter-tabs">
+    <a class="tabs" href="bird.html"><button class="tab"><img src="images/birdA1.jpg" alt=""> Bird</button></a>
+    <a class="tabs" href="birdfood.html"><button class="tab"><img src="images/cfood2.jpg" alt=""> Bird Food</button></a>
+    <a class="tabs" href="birdVet.html"><button class="tab"><img src="images/dog-4.jpg" alt=""> Vet Product</button></a>
+    <a class="tabs" href="birdAdopt.html"><button class="tab"><img src="images/birdA4.jpg" alt=""> Adopt Bird</button></a>
+  </div>
+
+  <h1 class="section-title">Food</h1>
+
+  <div class="product-grid">
+    
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="images/birdf5.jpg" alt="Carniwel" class="Products-image">
+      <div class="rating">⭐ 4.5</div>
+      <div class="product-name">Millet Bird Food</div>
+      <div class="price">Rs . 350</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="images/birdf1.jpg" alt="Carniwel" class="Products-image">
+      <div class="rating">⭐ 4.2</div>
+      <div class="product-name">Foxtail Millet</div>
+      <div class="price">Rs . 200</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="images/birdf3.jpg" alt="Carniwel" class="Products-image">
+      <div class="rating">⭐ 4.5</div>
+      <div class="product-name">Naturals Nutrition</div>
+      <div class="price">Rs . 600</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="images/bfood4.jpg" alt="Pedigree" class="Products-image">
+      <div class="rating">⭐ 4.4</div>
+      <div class="product-name">Multigrain</div>
+      <div class="price">Rs . 850</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="images/bfood5.jpg" alt="Snak" class="Products-image">
+      <div class="rating">⭐ 4.2</div>
+      <div class="product-name">Foxtail Millet</div>
+      <div class="price">Rs . 750</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="images/bfood6.jpg" alt="Fresh Lamb" class="Products-image">
+      <div class="rating">⭐ 4.7</div>
+      <div class="product-name">Karmeo</div>
+      <div class="price">Rs . 500</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+     <!-- Product 1 -->
+    <div class="product-card">
+      <img src="images/birdA3.jpg" alt="Black Hawk" class="Products-image">
+      <div class="rating">⭐ 4.5</div>
+      <div class="product-name">Dry Nuts</div>
+      <div class="price">Rs . 850</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="images/bfood8.jpg" alt="One Pluse" class="Products-image">
+      <div class="rating">⭐ 4.0</div>
+      <div class="product-name">Natural Nutrition</div>
+      <div class="price">Rs . 500</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="images/bfood9.jpg" alt="Royal Canin" class="Products-image">
+      <div class="rating">⭐ 4.4</div>
+      <div class="product-name">Mixed Dry Millet Roll</div>
+      <div class="price">Rs . 800</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="images/bfood10.jpg" alt="Proactive Health" class="Products-image">
+      <div class="rating">⭐ 4.1</div>
+      <div class="product-name">Parrot Food</div>
+      <div class="price">Rs . 650</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="images/bfood11.jpg" alt="VetLife" class="Products-image">
+      <div class="rating">⭐ 4.0</div>
+      <div class="product-name">Dry Fruit Mix</div>
+      <div class="price">Rs . 800</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="images/bfood12.jpg" alt="Every Dawg" class="Products-image">
+      <div class="rating">⭐ 4.5</div>
+      <div class="product-name">Seed Blend</div>
+      <div class="price">Rs . 400</div>
+      <button class="cart-button">Add To Cart</button>
+    </div>
+  </div>
+    </section>
+
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Contact Us</li>
+        <li>FAQs</li>
+        <li>Privacy Policy</li>
+        <li>Track your order</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Service</h4>
+      <ul>
+        <li>Pet Grooming</li>
+        <li>Vet Consultation</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li>Happy Pets</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Get in Touch for Offers</h4>
+      <div class="subscribe">
+        <input type="email" placeholder="Enter your mail id" >
+        <button>Submit</button>
+      </div>
+      <p><strong>Reach us:</strong> support@buffy.com</p>
+      <p class="small-note">Join our Zigly community and be the first to know about exciting updates, services, and expert advice on caring for your furry friends.</p>
+
+      <h4>Connect With Us</h4>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="footer-bottom">
+    <div class="shipping-box">
+      <i class="fas fa-truck"></i>
+      <div>
+        <strong>Free Shipping</strong>
+        <p>on order all above ₹700</p>
+      </div>
+    </div>
+    <div class="shipping-box">
+      <i class="fas fa-undo-alt"></i>
+      <div>
+        <strong>Easy Return Policy</strong>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
+
+
